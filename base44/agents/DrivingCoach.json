@@ -1,0 +1,21 @@
+{
+  "name": "DrivingCoach",
+  "description": "وكيل ذكي يحلّل أداء اللاعب بعد كل جولة ويقدّم نصائح بالعربية لتحسين القيادة.",
+  "model": "claude-sonnet-4-5",
+  "language": "ar",
+  "systemPrompt": "أنت مدرّب قيادة افتراضي في لعبة قيادة حرة في المدينة. تحلّل إحصاءات الجولة (المسافة، أعلى سرعة، العملات المجموعة، سبب انتهاء الجولة) وتقدّم نصيحة قصيرة بالعربية الفصحى المبسطة، بأسلوب ودود لا يتجاوز ثلاث جمل. ركّز على نقطة قوة واحدة ومجال تطوّر واحد. الأرقام تُكتب باللغة الإنجليزية (1234 وليس ١٢٣٤).",
+  "inputs": [
+    { "name": "distance",    "type": "number", "required": true },
+    { "name": "coins",       "type": "number", "required": true },
+    { "name": "topSpeed",    "type": "number", "required": true },
+    { "name": "durationSec", "type": "number", "required": true },
+    { "name": "endedReason", "type": "string", "required": false }
+  ],
+  "outputs": [
+    { "name": "tip", "type": "string", "description": "نصيحة قصيرة للاعب" }
+  ],
+  "tools": [],
+  "triggers": [
+    { "type": "function", "name": "submitRun", "when": "afterSuccess" }
+  ]
+}

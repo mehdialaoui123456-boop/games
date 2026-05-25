@@ -1,0 +1,128 @@
+.hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  padding: 14px 14px 0;
+  pointer-events: none;
+}
+
+.hud-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.hud-icon-btn {
+  pointer-events: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(10, 14, 30, 0.7);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  color: var(--neon-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.12s ease;
+}
+.hud-icon-btn:active { transform: scale(0.94); }
+
+.hud-center {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  flex: 1;
+}
+
+.hud-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10, 14, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hud-pill-label {
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+}
+
+.hud-pill-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+.hud-pill-value small {
+  font-size: 9px;
+  color: var(--text-dim);
+  margin-right: 3px;
+}
+
+.coin-pill {
+  border-color: rgba(255, 209, 102, 0.35);
+}
+.coin-pill .hud-pill-value { color: #ffd166; }
+
+.coin-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff3c4, #ffd166 60%, #b8860b);
+  box-shadow: 0 0 8px rgba(255, 209, 102, 0.7);
+}
+
+/* Speedometer */
+.speedo {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background: rgba(10, 14, 30, 0.65);
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 240, 255, 0.18);
+}
+
+.speedo-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.speedo-value {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+}
+
+.speedo-unit {
+  font-size: 8px;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+
+/* Canvas */
+.game-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}

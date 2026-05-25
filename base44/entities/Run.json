@@ -1,0 +1,18 @@
+{
+  "name": "Run",
+  "description": "Single gameplay session: distance, coins, top speed, and any crash info.",
+  "fields": [
+    { "name": "id",          "type": "string",   "primary": true },
+    { "name": "playerId",    "type": "ref",      "ref": "Player", "required": true },
+    { "name": "distance",    "type": "number",   "required": true, "description": "meters" },
+    { "name": "coins",       "type": "number",   "required": true, "default": 0 },
+    { "name": "topSpeed",    "type": "number",   "required": true, "default": 0, "description": "km/h" },
+    { "name": "durationSec", "type": "number",   "required": true, "default": 0 },
+    { "name": "endedReason", "type": "string",   "required": false, "enum": ["crash", "quit", "complete"] },
+    { "name": "startedAt",   "type": "timestamp", "required": true, "auto": "createdAt" }
+  ],
+  "indexes": [
+    { "fields": ["playerId", "startedAt"], "order": "desc" },
+    { "fields": ["distance"], "order": "desc" }
+  ]
+}

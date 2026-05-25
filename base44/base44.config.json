@@ -1,0 +1,8 @@
+{
+  "projectId": "my-game-app",
+  "displayName": "قيادة حرة في المدينة",
+  "backendId": "REPLACE_WITH_YOUR_BASE44_BACKEND_ID",
+  "region": "eu-west-1",
+  "environment": "development",
+  "version": "1.0.0"
+}

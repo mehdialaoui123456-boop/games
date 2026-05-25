@@ -1,0 +1,31 @@
+{
+  "providers": [
+    { "type": "anonymous", "enabled": true, "description": "السماح للزوار باللعب فوراً دون تسجيل" },
+    { "type": "email_password", "enabled": true },
+    { "type": "google", "enabled": false }
+  ],
+  "rules": {
+    "Player": {
+      "read":   "auth.uid != null && (auth.uid == resource.id || auth.role == 'admin')",
+      "create": "auth.uid != null",
+      "update": "auth.uid == resource.id",
+      "delete": "auth.role == 'admin'"
+    },
+    "Run": {
+      "read":   "auth.uid == resource.playerId || auth.role == 'admin'",
+      "create": "auth.uid == resource.playerId",
+      "update": "false",
+      "delete": "auth.role == 'admin'"
+    },
+    "LeaderboardEntry": {
+      "read":   "true",
+      "create": "auth.role == 'system'",
+      "update": "auth.role == 'system'",
+      "delete": "auth.role == 'admin'"
+    }
+  },
+  "session": {
+    "tokenLifetimeMinutes": 1440,
+    "refreshLifetimeDays": 30
+  }
+}

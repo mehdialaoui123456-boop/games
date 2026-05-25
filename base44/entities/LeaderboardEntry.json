@@ -1,0 +1,16 @@
+{
+  "name": "LeaderboardEntry",
+  "description": "Aggregated best record per player for fast leaderboard queries.",
+  "fields": [
+    { "name": "id",           "type": "string",  "primary": true },
+    { "name": "playerId",     "type": "ref",     "ref": "Player", "required": true, "unique": true },
+    { "name": "displayName",  "type": "string",  "required": true },
+    { "name": "bestDistance", "type": "number",  "required": true, "default": 0 },
+    { "name": "totalCoins",   "type": "number",  "required": true, "default": 0 },
+    { "name": "country",      "type": "string",  "required": false },
+    { "name": "updatedAt",    "type": "timestamp", "auto": "updatedAt" }
+  ],
+  "indexes": [
+    { "fields": ["bestDistance"], "order": "desc" }
+  ]
+}

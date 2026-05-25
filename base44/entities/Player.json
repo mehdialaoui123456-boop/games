@@ -1,0 +1,19 @@
+{
+  "name": "Player",
+  "description": "Profile lacking authenticated user — tracks lifetime stats per device/account.",
+  "fields": [
+    { "name": "id",            "type": "string",  "primary": true, "description": "Auto-generated id" },
+    { "name": "displayName",   "type": "string",  "required": true, "description": "اسم اللاعب" },
+    { "name": "avatarColor",   "type": "string",  "required": false, "default": "#00f0ff" },
+    { "name": "totalCoins",    "type": "number",  "required": true, "default": 0 },
+    { "name": "totalDistance", "type": "number",  "required": true, "default": 0, "description": "بالأمتار" },
+    { "name": "bestDistance",  "type": "number",  "required": true, "default": 0 },
+    { "name": "topSpeed",      "type": "number",  "required": true, "default": 0, "description": "km/h" },
+    { "name": "createdAt",     "type": "timestamp", "required": true, "auto": "createdAt" },
+    { "name": "updatedAt",     "type": "timestamp", "required": true, "auto": "updatedAt" }
+  ],
+  "indexes": [
+    { "fields": ["bestDistance"], "order": "desc" },
+    { "fields": ["totalCoins"], "order": "desc" }
+  ]
+}

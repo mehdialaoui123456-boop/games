@@ -1,0 +1,83 @@
+:root {
+  --bg-deep: #05060d;
+  --bg-mid: #0a0e1a;
+  --road: #1c1f2b;
+  --road-line: #f5d442;
+  --neon-cyan: #00f0ff;
+  --neon-pink: #ff2bd6;
+  --neon-amber: #ffb347;
+  --neon-green: #2bff88;
+  --text: #f5f7ff;
+  --text-dim: #8a92ad;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html, body {
+  height: 100%;
+  background: #000;
+  color: var(--text);
+  font-family: 'Tajawal', system-ui, sans-serif;
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #11142b 0%, #000 70%);
+}
+
+.phone-frame {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  height: 100dvh;
+  max-height: 100dvh;
+  background: var(--bg-deep);
+  overflow: hidden;
+  box-shadow: 0 0 80px rgba(0, 240, 255, 0.15);
+}
+
+@media (min-width: 500px) {
+  .phone-frame {
+    height: min(100dvh, 900px);
+    border-radius: 36px;
+    border: 1px solid #1f2540;
+    box-shadow:
+      0 0 0 8px #0c0f1c,
+      0 0 0 9px #1f2540,
+      0 30px 80px rgba(0, 240, 255, 0.18),
+      0 30px 80px rgba(255, 43, 214, 0.12);
+  }
+}
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.display-font {
+  font-family: 'Rakkas', 'Tajawal', serif;
+  letter-spacing: 0.02em;
+}
+
+.eng-num {
+  font-family: 'Orbitron', monospace;
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+}

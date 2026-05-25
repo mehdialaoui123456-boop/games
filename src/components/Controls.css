@@ -1,0 +1,85 @@
+.controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  padding: 0 16px calc(20px + env(safe-area-inset-bottom));
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* In RTL the visual ordering of children flips. We use direction:ltr to
+     force the steering pad to remain on the visual left regardless. */
+  direction: ltr;
+}
+
+.steer-pad, .pedal-pad {
+  display: flex;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+.ctrl-btn {
+  background: rgba(15, 18, 35, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.08s ease, background 0.15s, box-shadow 0.15s;
+  touch-action: none;
+}
+
+.ctrl-btn:active {
+  transform: scale(0.92);
+}
+
+.steer-btn {
+  width: 64px;
+  height: 64px;
+  color: var(--neon-cyan);
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 4px 18px rgba(0, 240, 255, 0.18);
+}
+.steer-btn:active {
+  background: rgba(0, 240, 255, 0.18);
+  box-shadow: 0 4px 24px rgba(0, 240, 255, 0.4);
+}
+
+.pedal-btn {
+  width: 64px;
+  height: 80px;
+  flex-direction: column;
+}
+
+.pedal-label {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.gas-btn {
+  background: linear-gradient(180deg, rgba(43, 255, 136, 0.18), rgba(43, 255, 136, 0.06));
+  border-color: rgba(43, 255, 136, 0.45);
+  color: #b6ffd5;
+  box-shadow: 0 4px 18px rgba(43, 255, 136, 0.22);
+}
+.gas-btn:active {
+  background: linear-gradient(180deg, rgba(43, 255, 136, 0.45), rgba(43, 255, 136, 0.18));
+  box-shadow: 0 4px 24px rgba(43, 255, 136, 0.6);
+}
+
+.brake-btn {
+  background: linear-gradient(180deg, rgba(255, 80, 92, 0.18), rgba(255, 80, 92, 0.06));
+  border-color: rgba(255, 80, 92, 0.45);
+  color: #ffc0c6;
+  box-shadow: 0 4px 18px rgba(255, 80, 92, 0.22);
+}
+.brake-btn:active {
+  background: linear-gradient(180deg, rgba(255, 80, 92, 0.45), rgba(255, 80, 92, 0.18));
+  box-shadow: 0 4px 24px rgba(255, 80, 92, 0.6);
+}
